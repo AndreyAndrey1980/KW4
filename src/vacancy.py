@@ -2,6 +2,17 @@ from src.json_saver import json_saver
 
 
 class vacancy:
+    """
+    Данный код представляет собой определение класса vacancy, который используется для хранения информации о вакансиях.
+    Класс имеет атрибут list_vacancies, который представляет собой список вакансий.
+    Метод init является конструктором класса и принимает следующие параметры:
+    1. name_vacancy: название вакансии;
+    2. salary_from: минимальная зарплата по вакансии;
+    3. salary_to: максимальная зарплата по вакансии;
+    4. url: URL-адрес, связанный с вакансией;
+    5. city: город, в котором находится вакансия.
+    В методе init происходит добавление текущего объекта в список list_vacancies. Это позволяет хранить все вакансии в одном списке.
+    """
     list_vacancies = []
 
     def __init__(self, name_vacancy: str, salary_from: int, salary_to: int, url: str, city: str):
@@ -26,8 +37,8 @@ class vacancy:
     @classmethod
     def get_vacancy_list(cls, list_vacancy, city, salary_from) -> list:
         """
-        Get list with vacancies dicts. This list with copy of class Vacancy
-        :return: new lisrt with copy of class Vacancy
+        Получить список с указанием вакансий. Этот список с копией вакансии класса
+        ::return: новый список с копией вакансии класса
         """
         for vacancy in list_vacancy:
             name_vacancy = vacancy["name"]
