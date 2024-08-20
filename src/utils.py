@@ -36,17 +36,18 @@ def main_menu() -> int:
         "4 - Выборка по зарплате.\n"
         "5 - Удалить вакансию.\n"
         "6 - Записать результаты в файл.\n"
-        "7 - Выход.\n"
+        "7 - Очистить файл JSON.\n"
+        "8 - Выход.\n"
     )
 
     while True:
         answer = input("Выберите действие: ").strip()
         if answer.isdigit():
             answer = int(answer)
-            if 1 <= answer <= 7:
+            if 1 <= answer <= 8:
                 break
             else:
-                print("Можно ввести только число от 1 до 7!")
+                print("Можно ввести только число от 1 до 8!")
         else:
             print("Можно ввести только целое число")
     print("*" * 50)
@@ -124,7 +125,7 @@ def user_interaction() -> None:
                 print(f"Удалена вакансия с id={vac_id}\nОсталось {len(last_choice)} вакансий\n")
             if len(last_choice) > 0:
                 print(last_choice)
-            print(f"Всего  {len(last_choice)} вакансий\n")
+            print(f"Всего {len(last_choice)} вакансий\n")
 
         elif answer == 6:
             jsonfile = JSONSaver("vacancies.json")
@@ -132,5 +133,10 @@ def user_interaction() -> None:
             print("Данные успешно записаны.\n")
 
         elif answer == 7:
+            jsonfile = JSONSaver("vacancies.json")
+            jsonfile.clear_file()
+            print("Файл JSON успешно очищен.\n")
+
+        elif answer == 8:
             print("Благодарим за использование программы.\n До свидания.")
             break
