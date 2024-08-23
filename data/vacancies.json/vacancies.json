@@ -1,1 +1,122 @@
-[]
+[
+    {
+        "id": "99565999",
+        "name": "Специалист по тестированию/Тестировщик",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/99565999",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    },
+    {
+        "id": "104970095",
+        "name": "Frontend-разработчик",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/104970095",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    },
+    {
+        "id": "85312568",
+        "name": "DevOps Engineer",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/85312568",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    },
+    {
+        "id": "84078343",
+        "name": "Senior QA engineer",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/84078343",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    },
+    {
+        "id": "104345588",
+        "name": "Junior Python Backend Developer",
+        "city": "Санкт-Петербург",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/104345588",
+        "salary": {
+            "from": null,
+            "to": 80000
+        }
+    },
+    {
+        "id": "89237775",
+        "name": "Data Scientist",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/89237775",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    },
+    {
+        "id": "102170653",
+        "name": "Специалист по интеллектуальному анализу данных (PD, LGD розничные риски)",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/102170653",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    },
+    {
+        "id": "102432305",
+        "name": "Медиа-аналитик",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/102432305",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    },
+    {
+        "id": "105394925",
+        "name": "Junior Backend разработчик (Python)",
+        "city": "Москва",
+        "currency": "RUR",
+        "employment": "Полная занятость",
+        "url": "https://hh.ru/vacancy/105394925",
+        "salary": {
+            "from": 110000,
+            "to": 200000
+        }
+    },
+    {
+        "id": "106116006",
+        "name": "Стажёр-разработчик Python / Менти",
+        "city": "Калининград",
+        "currency": "RUR",
+        "employment": "Стажировка",
+        "url": "https://hh.ru/vacancy/106116006",
+        "salary": {
+            "from": 0,
+            "to": 0
+        }
+    }
+]

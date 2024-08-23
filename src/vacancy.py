@@ -41,8 +41,7 @@ class Vacancy(BaseVacancy):
         vac_id: int,
         name: str,
         city: str,
-        salary_from: float,
-        salary_to: float,
+        salary: dict,
         currency: str,
         employment: str,
         url: str,
@@ -50,18 +49,39 @@ class Vacancy(BaseVacancy):
         self.id = vac_id
         self.name: str = name
         self.city: str = city
-        self.salary_from: float = salary_from
-        self.salary_to: float = salary_to
         self.currency = currency
         self.employment: str = employment
         self.url: str = url
+        self.salary = self.__check_salary(salary)  # Проверка и установка значения зарплаты
+
+    def __check_salary(self, salary):
+        """
+        Приватный метод для проверки данных по зарплате.
+        """
+        if not isinstance(salary, dict):
+            raise ValueError("Зарплата должна быть представлена в виде словаря.")
+
+        if 'from' in salary and 'to' in salary:
+            from_salary = salary.get('from')
+            to_salary = salary.get('to')
+
+            if from_salary is not None and to_salary is not None:
+                if not (isinstance(from_salary, (int, float)) and isinstance(to_salary, (int, float))):
+                    raise ValueError("Значения 'from' и 'to' должны быть числами.")
+                if from_salary < 0 or to_salary < 0:
+                    raise ValueError("Значения 'from' и 'to' не могут быть отрицательными.")
+                if from_salary > to_salary:
+                    raise ValueError("'from' не может быть больше 'to'.")
+            return salary  # Возвращаем проверенные данные
+        else:
+            raise ValueError("Словарь зарплаты должен содержать ключи 'from' и 'to'.")
 
     def __str__(self) -> str:
         return (
             f"id: {self.id}\n"
             f"Название вакансии: {self.name}\n"
             f"Город: {self.city}\n"
-            f"Зарплата\nот: {self.salary_from} {self.currency}\nдо: {self.salary_to} {self.currency}\n"
+            f"Зарплата\nот: {self.salary} {self.currency}\nдо: {self.salary} {self.currency}\n"
             f"Тип занятости: {self.employment}\n"
             f"Ссылка на вакансию: {self.url}\n"
         )

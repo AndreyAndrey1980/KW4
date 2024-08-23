@@ -39,17 +39,10 @@ class HH_Api(GetVacancies):
 
                 if vac["salary"]:
                     salary = vac["salary"]
-                    currency = salary.get("currency")
+                    currency = salary.get("currency", "RUR")  # Используем "RUR" по умолчанию, если валюта не указана
 
-                    if salary["from"]:
-                        salary_from = salary["from"]
-                    else:
-                        salary_from = 0
-                    if salary["to"]:
-                        salary_to = salary["to"]
-                    else:
-                        salary_to = 0
-
+                    salary_from = salary.get("from", 0)  # Используем 0 по умолчанию, если значение не указано
+                    salary_to = salary.get("to", 0)  # Используем 0 по умолчанию, если значение не указано
                 else:
                     salary_from = 0
                     salary_to = 0
@@ -58,6 +51,10 @@ class HH_Api(GetVacancies):
                 employment = vac["employment"]["name"]
                 url = vac["alternate_url"]
 
-                new_vac = Vacancy(vac_id, name, city, salary_from, salary_to, currency, employment, url)
+                # Создаем словарь salary
+                salary_dict = {'from': salary_from, 'to': salary_to}
+
+                # Передаем словарь salary в конструктор
+                new_vac = Vacancy(vac_id, name, city, salary_dict, currency, employment, url)
                 hh_list.add_vacancy(new_vacancy=new_vac)
         return hh_list
